@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "rhinel <rhinelkc@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./server/index.js"
+  },
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",

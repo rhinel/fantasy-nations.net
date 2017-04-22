@@ -20,8 +20,8 @@ reapp.all('*', function(req, res) {
 
 //https-ssl
 let httpsServer = https.createServer({
-	key: fs.readFileSync('../../ssl-key/ssl-rhinel.xyz/ssl-key.key', 'utf8'),
-	cert: fs.readFileSync('../../ssl-key/ssl-rhinel.xyz/ssl-key.crt', 'utf8')
+	key: fs.readFileSync('../ssl-key/ssl-rhinel.xyz/ssl-key.key', 'utf8'),
+	cert: fs.readFileSync('../ssl-key/ssl-rhinel.xyz/ssl-key.crt', 'utf8')
 }, app)
 
 const httpPORT = process.env.HTTPPORT || 80
