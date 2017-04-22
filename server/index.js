@@ -15,6 +15,7 @@ let reapp = express()
 //http转发
 let httpServer = http.createServer(reapp)
 reapp.all('*', function(req, res) {
+  console.log('http//')
   return res.redirect("https://" + req.headers["host"] + req.url)
 })
 
