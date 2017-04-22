@@ -6,6 +6,7 @@ docker rm -f myhomepage
 docker run \
  --name myhomepage \
  -p 3080:80 \
+ -p 3443:443 \
  -v $PWD:/webapp \
  -v $PWD/../ssl-key:/ssl-key \
  -w /webapp \
