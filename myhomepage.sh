@@ -10,4 +10,4 @@ docker run \
  -v $PWD:/webapp \
  -v $PWD/../ssl-key:/ssl-key \
  -w /webapp \
- -d node npm start
+ -itd node npm start
