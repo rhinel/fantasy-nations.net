@@ -7,5 +7,5 @@ docker run \
  --name myhomepage \
  -p 3080:80 \
  -p 3443:443 \
- -v $PWD/webapp:/ \
+ -v $PWD/:/ \
  -d node npm start
