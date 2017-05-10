@@ -5,6 +5,8 @@ let http = require('http')
 let fs = require('fs')
 let path = require('path')
 
+let express = require('express')
+
 //启动路由及端口处理
 let app = express()
 //http转发
