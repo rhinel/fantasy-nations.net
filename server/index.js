@@ -13,11 +13,8 @@ let app = express()
 let httpServer = http.createServer(app)
 const httpPORT = process.env.HTTPPORT || 80
 app.use('/', express.static(path.resolve(__dirname, '../')))
-app.get('/404/', (req, res)=>{
-	res.send(fs.readFileSync(path.resolve('./404/404.html'), 'utf-8'))
-})
 app.get('*', (req, res)=>{
-	res.redirect('/404/?url=' + encodeURIComponent(req.url))
+	res.send(fs.readFileSync(path.resolve('./404/404.html'), 'utf-8'))
 })
 
 //启动监听
