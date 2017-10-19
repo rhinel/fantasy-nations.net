@@ -4,7 +4,6 @@
 let http = require('http')
 let fs = require('fs')
 let path = require('path')
-
 let express = require('express')
 
 //启动路由及端口处理
@@ -21,5 +20,5 @@ app.get('*', (req, res)=>{
 console.log('--------------------------------------')
 console.log(new Date())
 httpServer.listen(httpPORT, ()=>{
-	console.log('TechNode http is on port ' + httpPORT + '!') 
+	console.log(`TechNode http is on port${httpPORT}!`) 
 })

@@ -8,15 +8,9 @@
     "start": "node ./server/index.js"
   },
   "dependencies": {
-    "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "fs": "^0.0.1-security",
     "http": "^0.0.0",
-    "https": "^1.0.0",
-    "md5": "^2.2.1",
-    "mongoose": "^4.9.5",
-    "path": "^0.12.7",
-    "redis": "^2.7.1",
-    "superagent": "^3.5.2"
+    "path": "^0.12.7"
   }
 }
