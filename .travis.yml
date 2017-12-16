@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 8.9.3
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_843662992c36_key -iv $encrypted_843662992c36_iv -in FNRsa.enc -out ~\.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host 35.185.176.209\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  
+after_success:
+  - ssh rhinelkc@35.185.176.209 "sudo -i && ./gitcode/fantasy-nations.net/autoFetch.sh $TRAVIS_BRANCH"
+  
+addons:
+  - ssh_known_hosts: 35.185.176.209
+
+branches:
+  only:
+    - master
+    
