@@ -8,7 +8,7 @@ before_install:
   - echo -e "Host 35.185.176.209\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   
 after_success:
-  - ssh rhinelkc@35.185.176.209 "sudo -i & ./gitcode/fantasy-nations.net/autoFetch.sh $TRAVIS_BRANCH"
+  - ssh rhinelkc@35.185.176.209 "sudo -i /root/gitcode/fantasy-nations.net/autoFetch.sh $TRAVIS_BRANCH"
   
 addons:
   - ssh_known_hosts: 35.185.176.209
