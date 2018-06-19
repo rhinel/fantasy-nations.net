@@ -1,21 +1,24 @@
 language: node_js
 
 node_js:
-- "9"
+- '9'
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_843662992c36_key -iv $encrypted_843662992c36_iv -in TXRsa.enc -out ~/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_843662992c36_key -iv $encrypted_843662992c36_iv
+  -in TXRsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
-- echo -e "Host 111.230.174.166\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- echo -e "Host $txsl\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 script:
 - echo "start"
 
 after_success:
-- ssh root@111.230.174.166 "sudo -i /root/gitcode/fantasy-nations.net/autoFetch.sh $TRAVIS_BRANCH"
-
-addons:
-  ssh_known_hosts: 111.230.174.166
+- ssh root@$txsl "sudo -i /root/gitcode/fantasy-nations.net/autoFetch.sh
+  $TRAVIS_BRANCH"
 
 branches:
   only: master
+
+env:
+  global:
+    secure: buRyz2wRrLCoC9mpCBFHraytFfDTtOIpr0OuymA2thPJa7EyV8r5dG6lTBxfVH2hPrOVeg4dLeQGTnwEIppKclxW9irq+pgnKQ17BZz8z4xPfBArNHiqLj8rqIRBHKuhVW66DAw8aHOeZyr6EMPxh/Pr+MUlgO+CUDWfW/CIdXnu9CGjJCAwXEMW/99F1/WUXv7Km56ymhOX6jfTMu9jGKsFz63SEf47QI2/8amUoT9Pnj+uvbcgjQlB3kjWasC9GuAMyjo8n5mjq1wkRcz9BH6wyBOFfw/BYihWLPUGbF4WssXcmh+b2ZgcBP6QcKw5Ln5rGA/USSQ9nGT9jKWukjqv1upVvX6m1YX5Z/izxAMf1v4CUNtIA5SxdvRYjvOGFIxrKDfoUyu9kViAtdt+TxkY/3Kx/JRPSgXLHcE1aq9BSjMopUjPhqRwSSVpe12UF4FcM7DssKydNe08cvH3Dv2O5R8fTun9easyL7jC3/tRHaeAtHVXC4Q4Dhbl/NMoGEW0YynDiUNrRpCBbOG2TfHapBisPFPd2HWqe1eNTLzVF2SXnt8WETlG/Wt7FRcENYhUFT4gFd4gN5fWTm9XxedRvPQ8Vd4d/Kr0G91L+hg7oPbRSvgawSoRo4YNRG9H4IasB3+GuVE89MYkf6qGIPad8IAHYUWjUaHaTZHCnJk=
