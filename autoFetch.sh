@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 echo "--> 开始本地处理"
 
@@ -21,6 +21,8 @@ git fetch -p
 echo "--> 更新生产版本依赖"
 
 yarn install --production=true
+
+yarn git-init
 
 echo "--> docker restart"
 
