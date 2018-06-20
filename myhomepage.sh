@@ -7,6 +7,7 @@ docker run \
  --restart always \
  --name myhomepage \
  --expose 80 \
- -v $PWD:/webapp \
+ -v /etc/localtime:/etc/localtime \
+ -v ~/gitcode/fantasy-nations.net:/webapp \
  -w /webapp \
  -d node npm start
