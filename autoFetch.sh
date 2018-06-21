@@ -7,12 +7,12 @@ echo -e "\033[34m`date "+%T"`\033[0m"  "--> 开始本地处理"
 cd ~/gitcode/fantasy-nations.net/
 
 echo -e "\033[34m`date "+%T"`\033[0m"  "--> fetch当前分支"
-echo -e "\033[34m`date "+%T"`\033[0m"  "--> master"
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> $1"
 
 git status
 
-echo -e "\033[34m`date "+%T"`\033[0m"  "--> git checkout master"
-git checkout master
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> git checkout $1"
+git checkout $1
 
 echo -e "\033[34m`date "+%T"`\033[0m"  "--> git pull --all"
 
