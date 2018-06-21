@@ -1,7 +1,7 @@
 {
   "name": "fantasy-nations.net",
   "version": "1.0.12",
-  "main": "index.js",
+  "main": "./server/index.js",
   "author": "rhinel <rhinelkc@hotmail.com>",
   "private": true,
   "scripts": {
