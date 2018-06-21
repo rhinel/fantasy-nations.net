@@ -1,31 +1,36 @@
 #! /bin/bash
 
-echo "--> 开始本地处理"
+start=`date +%s`
+
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> 开始本地处理"
 
 cd ~/gitcode/fantasy-nations.net/
 
-echo "--> fetch当前分支"
-echo "--> $1"
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> fetch当前分支"
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> $1"
 
 git status
 
-echo "--> git checkout $1"
-
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> git checkout $1"
 git checkout $1
 
-echo "--> git pull --all"
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> git pull --all"
 
 git pull --all
 git fetch -p
 
-echo "--> 更新生产版本依赖"
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> 更新生产版本依赖"
 
 yarn install --production=true
 
 yarn git-init
 
-echo "--> docker restart"
+# yarn lint
+
+echo -e "\033[34m`date "+%T"`\033[0m"  "--> docker restart"
 
 sh ./myhomepage.sh
 
-echo "--> 全部完成"
+end=`date +%s`
+dif=$[ end - start ]
+echo -e "\033[42;37m done! \033[0m" $dif"s"
