@@ -12,6 +12,7 @@ const app = express()
 const httpServer = http.createServer(app)
 const httpPORT = process.env.HTTPPORT || 80
 app.use('/', express.static(path.resolve(__dirname, '../html/')))
+app.use('/404/assets/', express.static(path.resolve(__dirname, '../404/assets/')))
 app.get('*', (req, res) => {
 	res.send(fs.readFileSync(path.resolve(__dirname, '../404/404.html'), 'utf-8'))
 })
