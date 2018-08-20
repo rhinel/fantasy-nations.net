@@ -11,7 +11,7 @@ const app = express()
 //http转发
 const httpServer = http.createServer(app)
 const httpPORT = process.env.HTTPPORT || 80
-app.use('/', express.static(path.resolve(__dirname, '../')))
+app.use('/', express.static(path.resolve(__dirname, '../html/')))
 app.get('*', (req, res) => {
 	res.send(fs.readFileSync(path.resolve('../404/404.html'), 'utf-8'))
 })
