@@ -9,6 +9,7 @@
     "start": "node ./server/index.js"
   },
   "dependencies": {
+    "compression": "^1.7.3",
     "express": "^4.16.3"
   }
 }

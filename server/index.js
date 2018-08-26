@@ -5,12 +5,17 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
+const compress = require('compression')
 
 //启动路由及端口处理
 const app = express()
-//http转发
 const httpServer = http.createServer(app)
 const httpPORT = process.env.HTTPPORT || 80
+
+// 使用gzip
+app.use(compress())
+
+// route
 app.use('/', express.static(path.resolve(__dirname, '../html/')))
 app.use('/404/assets/', express.static(path.resolve(__dirname, '../404/assets/')))
 app.get('*', (req, res) => {
