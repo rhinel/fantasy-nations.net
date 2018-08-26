@@ -1,6 +1,6 @@
 {
   "name": "fantasy-nations.net",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "./server/index.js",
   "author": "rhinel <rhinelkc@hotmail.com>",
   "private": true,
@@ -9,6 +9,7 @@
     "start": "node ./server/index.js"
   },
   "dependencies": {
+    "compression": "^1.7.3",
     "express": "^4.16.3"
   }
 }
