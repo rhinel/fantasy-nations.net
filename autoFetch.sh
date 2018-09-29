@@ -25,8 +25,6 @@ yarn install --production=true
 
 yarn git-init
 
-# yarn lint
-
 echo -e "\033[34m`date "+%T"`\033[0m"  "--> docker restart"
 
 sh ./myhomepage.sh
